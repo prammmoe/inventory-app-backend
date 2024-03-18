@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 import response from '../res.js';
 import connection from '../configs/db.js';
-import express from 'express';
 import jwt from 'jsonwebtoken';
 
 function home(req, res) {
