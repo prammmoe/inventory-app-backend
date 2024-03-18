@@ -39,7 +39,7 @@ function getAllProducts(req, res) {
       }
     });
   } else {
-    connection.query(query + `ORDER BY ${sortBy} ${sort} LIMIT ${page}, ${limit}`, function (err, results) {
+    connection.query(query + ` ORDER BY ${sortBy} ${sort} LIMIT ${page}, ${limit}`, function (err, results) {
       if (err) {
         console.log(err);
       } else {
