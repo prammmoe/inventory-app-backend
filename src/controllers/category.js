@@ -1,4 +1,3 @@
-import response from '../res.js';
 import connection from '../configs/db.js';
 
 function Category(req, res) {

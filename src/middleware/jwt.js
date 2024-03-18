@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import jwt from 'jsonwebtoken';
-import express from 'express';
 
 export function verifyToken(req, res, next) {
   const delloHeader = req.headers['authorization'];
