@@ -9,7 +9,7 @@ function Product(req, res) {
       res.status(200).json({
         status: 200,
         error: false,
-        message: 'Successfully get all products data',
+        message: 'Successfully get all products data!',
         data: results,
       });
     }
@@ -66,7 +66,7 @@ function findProducts(req, res) {
           res.status(200).json({
             status: 200,
             error: false,
-            message: 'Successfully get single data',
+            message: 'Successfully get single products data!',
             data: results,
           });
         } else {
@@ -98,13 +98,13 @@ function createProducts(req, res) {
         console.log(err);
         res.status(400).json({
           status: 400,
-          message: 'Error adding data',
+          message: 'Error adding data!',
         });
       } else {
         res.status(200).json({
           status: 200,
           error: false,
-          message: 'Successfully added new product',
+          message: 'Successfully added new product!',
           data: req.body,
         });
       }
@@ -146,7 +146,7 @@ function deleteProducts(req, res) {
         res.status(200).json({
           status: 200,
           error: false,
-          message: 'Successfully delete product data with id ' + req.params.id,
+          message: 'Successfully delete product data with id: ' + req.params.id,
         });
       } else {
         res.status(400).json({
@@ -177,7 +177,7 @@ function addReduce(req, res) {
         res.status(350).json({
           status: 350,
           error: true,
-          message: 'Value cannot be less than quantity ' + req.body.id,
+          message: 'Value cannot be less than quantity: ' + req.body.id,
           data: results,
         });
       } else {
