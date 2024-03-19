@@ -8,7 +8,7 @@ function Category(req, res) {
       res.status(200).json({
         status: 200,
         error: false,
-        message: 'Successfully get all category data!',
+        message: 'Successfully get all products category!',
         data: results,
       });
     }
@@ -23,7 +23,7 @@ function findCategory(req, res) {
       res.status(200).json({
         status: 200,
         error: false,
-        message: 'Successfully get all category data!',
+        message: 'Successfully get products category!',
         data: results,
       });
     }
@@ -37,13 +37,13 @@ function createCategory(req, res) {
       console.log(err);
       res.status(400).json({
         status: 400,
-        message: 'Error add new data',
+        message: 'Error add new category!',
       });
     } else {
       res.status(200).json({
         status: 200,
         error: false,
-        message: 'Successfully add new category',
+        message: 'Successfully add new category!',
         data: req.body,
       });
     }
@@ -84,13 +84,13 @@ function deleteCategory(req, res) {
         res.status(200).json({
           status: 200,
           error: false,
-          message: 'Succesfully delele category data with id ' + req.params.id,
+          message: 'Succesfully delele category data with id: ' + req.params.id,
         });
       } else {
         res.status(400).json({
           status: 400,
           error: true,
-          message: 'Cannot delete category data with id ' + req.params.id,
+          message: 'Cannot delete category data with id: ' + req.params.id,
         });
       }
     }
