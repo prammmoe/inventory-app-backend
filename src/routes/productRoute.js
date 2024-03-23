@@ -4,13 +4,14 @@ import { verifyToken } from '../middleware/jwt.js'; // Import the middleware fun
 export function productRoute(app) {
   app.route('/').get(IndexPage);
 
-  app.route('/products').get(getAllProducts).post(verifyToken, createProducts); // Apply middleware before routes
+  // For the POST method, apply JWT middleware before the Controller
+  app.route('/products').get(getAllProducts).post(verifyToken, createProducts); 
 
   app
     .route('/products/:id')
     .get(findProducts)
-    .put(verifyToken, updateProducts) // Apply middleware before routes
-    .delete(verifyToken, deleteProducts); // Apply middleware before routes
+    .put(verifyToken, updateProducts) 
+    .delete(verifyToken, deleteProducts); 
 
-  app.route('/products/quantity/').get(verifyToken, addReduce); // Apply middleware before route
+  app.route('/products/quantity/').get(verifyToken, addReduce); 
 }
