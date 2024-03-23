@@ -1,6 +1,7 @@
 import mysql from 'mysql';
 
-const pool = mysql.createPool({
+// Using createPool instead of createConnection for data changing flexibility
+const connection = mysql.createPool({
   connectionLimit: 10,
   host: 'localhost',
   user: 'root',
@@ -8,4 +9,4 @@ const pool = mysql.createPool({
   database: 'inventorydb',
 });
 
-export default pool;
+export default connection;

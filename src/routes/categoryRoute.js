@@ -1,5 +1,5 @@
 import { Category, findCategory, createCategory, updateCategory, deleteCategory } from '../controllers/category.js';
-import { verifyToken } from '../middleware/jwt.js'; // Import the middleware function
+import { verifyToken } from '../middleware/jwt.js'; 
 
 export function categoryRoute(app) {
   app.route('/category').get(Category);
