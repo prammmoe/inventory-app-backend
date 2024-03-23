@@ -33,7 +33,7 @@ function getAllProducts(req, res) {
         res.status(200).json({
           status: 200,
           error: false,
-          message: 'Successfully get products data!',
+          message: 'Successfully get product data!',
           data: results,
         });
       }
@@ -66,7 +66,7 @@ function findProducts(req, res) {
           res.status(200).json({
             status: 200,
             error: false,
-            message: 'Successfully get single products data!',
+            message: 'Successfully get single product data!',
             data: results,
           });
         } else {
@@ -119,7 +119,7 @@ function updateProducts(req, res) {
     res.status(300).json({
       status: 300,
       error: true,
-      message: 'Field needed for update',
+      message: 'Field needed for an update!',
     });
   } else {
     connection.query('UPDATE products SET name = ?, description = ?, image = ?, id_category = ?, quantity = ?, date_update = ?, where id = ?', [name, description, image, id_category, quantity, date, req.params.id], function (err, results) {
