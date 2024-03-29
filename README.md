@@ -23,3 +23,19 @@ npm i
 6. Start the database server
 
 7. Run the API using `npm start`
+
+## Project Structure
+
+    .
+    ├── src
+    │   ├──configs
+    │   ├──controllers
+    │   ├──middleware
+    │   ├──routes
+    │   └──middleware
+    ├── .gitignore              
+    ├──app.js
+    ├──dump_data_example.sql
+    ├──package-lock.json
+    ├──package.json
+    └── README.md
