@@ -33,5 +33,5 @@ categoryRoute(app);
 userRoute(app);
 
 app.listen(port, () => {
-  console.log(`Inventory App Backend is listening on port ${port}`);
+  console.log(`Inventory App Backend is listening on http://localhost:${port}`);
 });
