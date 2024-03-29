@@ -1,7 +1,45 @@
-# Inventory Backend
+# Inventory App Backend
 
-Made with ExpressJS
+Inventory App REST API made with ExpressJS
 
-- Clone this repository using `git clone ~`
-- Run `npm i` to install all the dependencies
-- Run the localhost server with `npm start`
+## Installation
+
+To run this API, follow the required steps below:
+1. Clone the repository:
+```
+git clone https://github.com/prammmoe/inventory-app-backend
+```
+2. Install all dependencies
+```
+npm i
+```
+
+3. Copy `.env.example` and rename it to `.env` and fill with your own credentials.
+
+4. Configure your db connection in `configs/db.js`
+
+5. Dump the data `dump_data_example.sql` on your local database
+
+6. Start the database server
+
+7. Run the API using `npm start`
+
+## Project Structure
+
+    .
+    ├── src
+    │   ├──configs
+    │   ├──controllers
+    │   ├──middleware
+    │   ├──routes
+    │   └──middleware
+    ├── .gitignore              
+    ├──app.js
+    ├──dump_data_example.sql
+    ├──package-lock.json
+    ├──package.json
+    └── README.md
+
+## TODO
+
+<input type="checkbox" disabled /> API Documentation
