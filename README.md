@@ -39,3 +39,7 @@ npm i
     ├──package-lock.json
     ├──package.json
     └── README.md
+
+## TODO
+
+<input type="checkbox" disabled /> API Documentation
