@@ -69,6 +69,35 @@ GET\ localhost:5000/products
 }
 ```
 
+Using query params:
+
+### Request
+
+```
+GET\ localhost:5000/products?limit=1
+```
+
+### Response
+
+```
+{
+  "status": 200,
+  "error": false,
+  "message": "Successfully get all products data!",
+  "data": [
+    {
+      "id": 1,
+      "name": "Pembersih Wajah - Cerah Seketika",
+      "description": "Pembersih wajah lembut yang efektif membersihkan kotoran, minyak, dan makeup. Membuat wajah tampak lebih cerah dan berseri.",
+      "image": "pembersih_wajah.jpg",
+      "category": "Produk Kecantikan",
+      "quantity": 100,
+      "date_added": "2024-03-29T21:30:52.000Z",
+      "date_update": "2024-03-29T21:30:52.000Z"
+    }
+  ]
+}
+```
 
 ## Project Structure
 
