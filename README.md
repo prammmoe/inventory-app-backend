@@ -22,7 +22,53 @@ npm i
 
 6. Start the database server
 
-7. Run the API using `npm start`
+7. Run the API
+
+```
+npm start
+```
+
+## Response
+
+Sample response:
+
+### Request
+
+```
+GET\ localhost:5000/products
+```
+
+### Response
+```
+{
+  "status": 200,
+  "error": false,
+  "message": "Successfully get all products data!",
+  "data": [
+    {
+      "id": 1,
+      "name": "Pembersih Wajah - Cerah Seketika",
+      "description": "Pembersih wajah lembut yang efektif membersihkan kotoran, minyak, dan makeup. Membuat wajah tampak lebih cerah dan berseri.",
+      "image": "pembersih_wajah.jpg",
+      "category": "Produk Kecantikan",
+      "quantity": 100,
+      "date_added": "2024-03-29T21:30:52.000Z",
+      "date_update": "2024-03-29T21:30:52.000Z"
+    },
+    {
+      "id": 2,
+      "name": "Toner Penyeimbang Kulit",
+      "description": "Toner yang menyegarkan dan menyeimbangkan pH kulit. Mempersiapkan kulit untuk produk selanjutnya agar lebih mudah menyerap.",
+      "image": "toner.jpg",
+      "category": "Produk Kecantikan",
+      "quantity": 80,
+      "date_added": "2024-03-29T21:30:52.000Z",
+      "date_update": "2024-03-29T21:30:52.000Z"
+    }
+  ]
+}
+```
+
 
 ## Project Structure
 
