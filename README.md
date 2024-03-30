@@ -108,7 +108,7 @@ GET\ localhost:5000/products?limit=1
     │   ├──middleware
     │   ├──routes
     │   └──middleware
-    ├── .gitignore              
+    ├──.gitignore              
     ├──app.js
     ├──dump_data_example.sql
     ├──package-lock.json
