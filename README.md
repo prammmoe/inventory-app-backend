@@ -117,4 +117,5 @@ GET\ localhost:5000/products?limit=1
 
 ## TODO
 
-<input type="checkbox" disabled /> API Documentation
+- API Documentation
+- Deployment
