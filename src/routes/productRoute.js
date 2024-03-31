@@ -1,5 +1,5 @@
 import { getAllProducts, findProducts, createProducts, updateProducts, deleteProducts, addReduce, IndexPage } from '../controllers/product.js';
-import { verifyToken } from '../middleware/jwt.js'; // Import the middleware function
+import { verifyToken } from '../middleware/jwt.js';
 
 export function productRoute(app) {
   app.route('/').get(IndexPage);
