@@ -1,6 +1,6 @@
 import mysql from "mysql";
 
-// Using createPool instead of createConnection for data changing flexibility
+// Using createPool instead of createConnection for data flexibility
 const connection = mysql.createPool({
   connectionLimit: 10,
   host: "localhost",
