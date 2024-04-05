@@ -9,7 +9,7 @@ To run this API, follow the required steps below:
 ```
 git clone https://github.com/prammmoe/inventory-app-backend
 ```
-2. Install all dependencies
+2. Install all dependencies using npm install
 ```
 npm i
 ```
