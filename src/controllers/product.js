@@ -19,7 +19,7 @@ function Product(req, res) {
 function getAllProducts(req, res) {
   var sort = req.query.sort || "ASC";
   var sortBy = req.params.sortBy || "id";
-  var limit = req.query.limit || 3;
+  var limit = req.query.limit || 10;
   var page = (req.query.page - 1) * limit || 0;
   const search = `%${req.query.search}%`;
 
