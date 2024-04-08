@@ -36,4 +36,4 @@ app.listen(port, () => {
   console.log(`Inventory App Backend is listening on http://localhost:${port}`);
 });
 
-module.exports = app;
+export default app;
