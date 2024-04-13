@@ -8,7 +8,7 @@ function Category(req, res) {
       res.status(200).json({
         status: 200,
         error: false,
-        message: 'Successfully get all products category!',
+        message: 'Successfully get all products category.',
         data: results,
       });
     }
@@ -23,7 +23,7 @@ function findCategory(req, res) {
       res.status(200).json({
         status: 200,
         error: false,
-        message: 'Successfully get products category!',
+        message: 'Successfully get products category.',
         data: results,
       });
     }
@@ -37,13 +37,13 @@ function createCategory(req, res) {
       console.log(err);
       res.status(400).json({
         status: 400,
-        message: 'Error add new category!',
+        message: 'Error add new category.',
       });
     } else {
       res.status(200).json({
         status: 200,
         error: false,
-        message: 'Successfully add new category!',
+        message: 'Successfully add new category.',
         data: req.body,
       });
     }
@@ -57,7 +57,7 @@ function updateCategory(req, res) {
     res.status(300).json({
       status: 300,
       error: true,
-      message: 'Name needed for update!',
+      message: 'Name needed for update.',
     });
   } else {
     connection.query('UPDATE category SET name = ? where id = ?', [name, req.params.id], function (err, results) {

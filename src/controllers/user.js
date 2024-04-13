@@ -6,7 +6,7 @@ import connection from '../configs/db.js';
 import jwt from 'jsonwebtoken';
 
 function home(req, res) {
-  response.ok('Welcome! Please login!', res);
+  response.ok('Welcome! Please login.', res);
 }
 
 function notFound(req, res) {
@@ -37,13 +37,13 @@ function login(req, res) {
         } else {
           res.send({
             code: 204,
-            success: 'Email and password does not match!',
+            success: 'Email and password does not match.',
           });
         }
       } else {
         res.send({
           code: 204,
-          success: 'Email and password needed!',
+          success: 'Email and password needed.',
         });
       }
     }
@@ -65,13 +65,13 @@ function register(req, res) {
           console.log(err);
           res.status(400).json({
             status: 400,
-            message: 'Error add new users!',
+            message: 'Error add new users.',
           });
         } else {
           res.status(200).json({
             status: 200,
             error: false,
-            message: 'Register success!',
+            message: 'Register success.',
             data: req.body,
           });
         }

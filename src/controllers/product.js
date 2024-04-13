@@ -76,7 +76,7 @@ function findProducts(req, res) {
           res.status(200).json({
             status: 200,
             error: false,
-            message: "Successfully get single product data!",
+            message: "Successfully get single product data.",
             data: results,
           });
         } else {
