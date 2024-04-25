@@ -1,9 +1,9 @@
+const response = require("../configs/res.js");
+const db = require("../configs/db");
+const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 
 dotenv.config();
-const response = require("../res.js");
-const db = require("../configs/db");
-const jwt = require("jsonwebtoken");
 
 const home = (req, res) => {
   response.ok("Welcome! Please login.", res);
