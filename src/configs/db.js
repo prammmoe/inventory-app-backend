@@ -1,10 +1,10 @@
-import mysql from "mysql";
-import dotenv from "dotenv";
+const mysql = require("mysql");
+const dotenv = require("dotenv");
 
 dotenv.config();
 
-// Using createPool instead of createConnection for data flexibility
-const connection = mysql.createPool({
+// Using createPool instead of createConnection for connection flexibility
+const db = mysql.createPool({
   connectionLimit: 10,
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -12,4 +12,4 @@ const connection = mysql.createPool({
   database: process.env.DB_NAME,
 });
 
-export default connection;
+module.exports = db;

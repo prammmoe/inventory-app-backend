@@ -1,14 +1,14 @@
-import dotenv from 'dotenv';
+const dotenv = require("dotenv");
 
 dotenv.config();
 
-import jwt from 'jsonwebtoken';
+const jwt = require("jsonwebtoken");
 
-export function verifyToken(req, res, next) {
-  const delloHeader = req.headers['authorization'];
+const verifyToken = (req, res, next) => {
+  const delloHeader = req.headers["authorization"];
 
-  if (typeof delloHeader !== 'undefined') {
-    const Dello = delloHeader.split(' ');
+  if (typeof delloHeader !== "undefined") {
+    const Dello = delloHeader.split(" ");
     const delloToken = Dello[1];
 
     req.token = delloToken;
@@ -26,14 +26,16 @@ export function verifyToken(req, res, next) {
       res.status(403).json({
         status: 403,
         error: true,
-        message: 'Your token is invalid or expired',
+        message: "Your token is invalid or expired",
       });
     }
   } else {
     res.status(403).json({
       status: 403,
       error: true,
-      message: 'Please insert token',
+      message: "Please insert token",
     });
   }
-}
+};
+
+module.exports = verifyToken;
