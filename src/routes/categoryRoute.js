@@ -1,10 +1,18 @@
-import { Category, findCategory, createCategory, updateCategory, deleteCategory } from '../controllers/category.js';
-import { verifyToken } from '../middleware/jwt.js'; 
+const {
+  Category,
+  findCategory,
+  createCategory,
+  updateCategory,
+  deleteCategory,
+} = require("../controllers/category.js");
+const verifyToken = require("../middleware/jwt.js");
 
-export function categoryRoute(app) {
-  app.route('/category').get(Category);
-  app.route('/category/:id').get(findCategory);
-  app.route('/category').post(verifyToken, createCategory);
-  app.route('/category/:id').put(verifyToken, updateCategory);
-  app.route('/category/:id').delete(verifyToken, deleteCategory);
-}
+const categoryRoute = (app) => {
+  app.route("/categories").get(Category);
+  app.route("/categories/:id").get(findCategory);
+  app.route("/categories").post(verifyToken, createCategory);
+  app.route("/categories/:id").put(verifyToken, updateCategory);
+  app.route("/categories/:id").delete(verifyToken, deleteCategory);
+};
+
+module.exports = categoryRoute;

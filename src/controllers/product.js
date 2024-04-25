@@ -1,8 +1,8 @@
-import response from "../res.js";
-import connection from "../configs/db.js";
+const response = require("../res.js");
+const db = require("../configs/db");
 
-function Product(req, res) {
-  connection.query("SELECT * from products", function (err, results, fields) {
+const Product = (req, res) => {
+  db.query("SELECT * from products", function (err, results, fields) {
     if (err) {
       console.log(err);
     } else {
@@ -14,9 +14,9 @@ function Product(req, res) {
       });
     }
   });
-}
+};
 
-function getAllProducts(req, res) {
+const getAllProducts = (req, res) => {
   var sort = req.query.sort || "ASC";
   var sortBy = req.params.sortBy || "id";
   var limit = req.query.limit || 8;
@@ -27,7 +27,7 @@ function getAllProducts(req, res) {
     "SELECT products.id, products.name, description, image, category.name as category, quantity, date_added, date_update FROM products INNER JOIN category on category.id = products.id_category";
 
   if (req.query.search) {
-    connection.query(
+    db.query(
       query +
         `WHERE products.name LIKE ?` +
         ` ORDER BY ${sortBy} ${sort} LIMIT ${page}, ${limit}`,
@@ -46,7 +46,7 @@ function getAllProducts(req, res) {
       }
     );
   } else {
-    connection.query(
+    db.query(
       query + ` ORDER BY ${sortBy} ${sort} LIMIT ${page}, ${limit}`,
       function (err, results) {
         if (err) {
@@ -62,10 +62,10 @@ function getAllProducts(req, res) {
       }
     );
   }
-}
+};
 
-function findProducts(req, res) {
-  connection.query(
+const findProducts = (req, res) => {
+  db.query(
     "SELECT id, name, description, image, (select name from category where products.id_category = category.id) as category, quantity, date_added, date_update from products WHERE id = ?",
     req.params.id,
     function (err, results, fields) {
@@ -90,9 +90,9 @@ function findProducts(req, res) {
       }
     }
   );
-}
+};
 
-function createProducts(req, res) {
+const createProducts = (req, res) => {
   const { name, description, image, id_category, quantity } = req.body;
   const date = new Date();
 
@@ -103,7 +103,7 @@ function createProducts(req, res) {
       message: "The values cant be null!",
     });
   } else {
-    connection.query(
+    db.query(
       "INSERT INTO products (name, description, image, id_category, quantity, date_added, date_update) values (?, ?, ?, ?, ?, ?, ?)",
       [name, description, image, id_category, quantity, date, date],
       function (err, results) {
@@ -124,9 +124,9 @@ function createProducts(req, res) {
       }
     );
   }
-}
+};
 
-function updateProducts(req, res) {
+const updateProducts = (req, res) => {
   const { name, description, image, id_category, quantity, date } = req.body;
 
   if (!name || !description || !image || !id_category || !quantity) {
@@ -136,7 +136,7 @@ function updateProducts(req, res) {
       message: "Field needed for an update!",
     });
   } else {
-    connection.query(
+    db.query(
       "UPDATE products SET name = ?, description = ?, image = ?, id_category = ?, quantity = ?, date_update = ?, where id = ?",
       [name, description, image, id_category, quantity, date, req.params.id],
       function (err, results) {
@@ -154,10 +154,10 @@ function updateProducts(req, res) {
       }
     );
   }
-}
+};
 
-function deleteProducts(req, res) {
-  connection.query(
+const deleteProducts = (req, res) => {
+  db.query(
     "DELETE from products WHERE id = ?",
     [req.params.id],
     function (err, results) {
@@ -181,9 +181,9 @@ function deleteProducts(req, res) {
       }
     }
   );
-}
+};
 
-function addReduce(req, res) {
+const addReduce = (req, res) => {
   const id = req.body.id;
   const act = req.body.act;
   const value = req.body.value;
@@ -193,7 +193,7 @@ function addReduce(req, res) {
   } else if (act == "reduce") {
     var query = `UPDATE products SET quantity = quantity-${value} WHERE +${id} AND quantity >= ${value}`;
   }
-  connection.query(query, [req.params.id], function (err, results) {
+  db.query(query, [req.params.id], function (err, results) {
     if (err) {
       console.log(err);
     } else {
@@ -213,17 +213,17 @@ function addReduce(req, res) {
       }
     }
   });
-}
+};
 
-function IndexPage(req, res) {
+const IndexPage = (req, res) => {
   response("Hello, welcome!", res);
-}
+};
 
-function notFound(req, res) {
+const notFound = (req, res) => {
   res.send("404 Not Found!");
-}
+};
 
-export {
+module.exports = {
   Product,
   getAllProducts,
   findProducts,
