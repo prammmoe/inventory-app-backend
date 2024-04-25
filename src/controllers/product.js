@@ -1,4 +1,4 @@
-const response = require("../res.js");
+const response = require("../configs/res.js");
 const db = require("../configs/db");
 
 const Product = (req, res) => {
