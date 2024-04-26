@@ -8,11 +8,12 @@ const {
 const verifyToken = require("../middleware/jwt.js");
 
 const categoryRoute = (app) => {
-  app.route("/categories").get(Category);
-  app.route("/categories/:id").get(findCategory);
-  app.route("/categories").post(verifyToken, createCategory);
-  app.route("/categories/:id").put(verifyToken, updateCategory);
-  app.route("/categories/:id").delete(verifyToken, deleteCategory);
+  app.route("/categories").get(Category).post(verifyToken, createCategory);
+  app
+    .route("/categories/:id")
+    .get(findCategory)
+    .put(verifyToken, updateCategory)
+    .delete(verifyToken, deleteCategory);
 };
 
 module.exports = categoryRoute;
