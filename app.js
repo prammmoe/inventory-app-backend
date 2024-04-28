@@ -16,7 +16,7 @@ app.use(logger("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Connect to front-end using CORS
+// Init CORS
 const corsBaseUrl = process.env.PORT || 3000;
 
 // CORS middleware
