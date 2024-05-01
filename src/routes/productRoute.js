@@ -7,7 +7,7 @@ const {
   addReduce,
   IndexPage,
 } = require("../controllers/product.js");
-const verifyToken = require("../middleware/jwt.js");
+const verifyToken = require("../middleware/auth.js");
 
 const productRoute = (app) => {
   app.route("/").get(IndexPage);
