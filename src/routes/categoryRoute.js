@@ -5,7 +5,7 @@ const {
   updateCategory,
   deleteCategory,
 } = require("../controllers/category.js");
-const verifyToken = require("../middleware/jwt.js");
+const verifyToken = require("../middleware/auth.js");
 
 const categoryRoute = (app) => {
   app.route("/categories").get(Category).post(verifyToken, createCategory);
